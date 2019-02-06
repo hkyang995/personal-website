@@ -35,8 +35,10 @@ let items = [
     icon: <FaRocket />,
     subheader: '',
     description: [
-      'Languages: Javascript, ReactJS',
-      'Concepts: Object Oriented Programming, Data Structures',
+      'Languages: Javascript, ReactJS, GraphQL, HTML/CSS, C/C++, Java',
+      'Concepts: Object Oriented Programming, Data Structures, Algorithm Engineering',
+      'Operating Systems: Windows, Linux, Mac',
+      'Tools: Git, Eclipse, Visual Studio, Qt, MS SQL Server',
     ],
   },
   {
@@ -54,8 +56,11 @@ let items = [
       </Grid>
     ),
     description: [
-      'Assisted with troubleshooting and deployment of software products.',
-      'Worked with engineering team',
+      'Assists with troubleshooting and deployment of software projects',
+      'Works with engineering team to design and implement features and capabilities on web applications using ReactJS and Apollo GraphQL ',
+      'Applies agile methodologies to implement features',
+      'Refactored code base to improve efficiency and speed for a company with over 100,000 users',
+      'Created new features to improve user experience for a company with over 5,000 users',
     ],
   },
 ]
@@ -86,7 +91,7 @@ const ResumeItem = props => (
 )
 
 const Resume = () => (
-  <div style={{ height: '100vh' }}>
+  <div style={{ paddingBottom: '10px' }}>
     <h1 style={{ textAlign: 'center' }}>Resume</h1>
     {items.map((item, index) => (
       <ResumeItem item={item} index={index} />
