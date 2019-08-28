@@ -1,6 +1,16 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
+import styled from 'styled-components'
 import { FaPencilAlt, FaRocket, FaCode } from 'react-icons/fa'
+
+const Container = styled.div``
+const HeaderText = styled.h1``
+const SubHeaderText = styled.h3``
+const Divider = styled.hr``
+const BodyText = styled.h4``
+const ListContainer = styled.ul``
+const ListItem = styled.li``
+const BoldText = styled.b``
 
 let items = [
   {
@@ -21,13 +31,13 @@ let items = [
       </Grid>
     ),
     description: [
-      <div>Member of the Association for Computing Machinery</div>,
-      <div>
-        <b>Dean's list:</b> Fall 2017 - Present
-      </div>,
-      <div>
-        <b>GPA:</b> 3.5
-      </div>,
+      <Container>Member of the Association for Computing Machinery</Container>,
+      <Container>
+        <BoldText>Dean's list:</BoldText> Fall 2017 - Present
+      </Container>,
+      <Container>
+        <BoldText>GPA:</BoldText> 3.5
+      </Container>,
     ],
   },
   {
@@ -66,8 +76,8 @@ let items = [
 ]
 
 const ResumeItem = props => (
-  <div>
-    <h3>
+  <Container>
+    <SubHeaderText>
       <Grid
         container
         direction="row"
@@ -77,26 +87,33 @@ const ResumeItem = props => (
         <Grid item>{props.item.header}</Grid>
         <Grid item>{props.item.icon}</Grid>
       </Grid>
-    </h3>
-    <hr />
-    <div style={{ paddingLeft: '20px' }}>
-      <h4 style={{ marginTop: '20px' }}>{props.item.subheader}</h4>
-      <ul style={{ paddingLeft: '25px' }}>
+    </SubHeaderText>
+    <Divider />
+    <div>
+      <BodyText>{props.item.subheader}</BodyText>
+      <ListContainer>
         {props.item.description.map((desc, index) => (
-          <li index={index}>{desc}</li>
+          <ListItem index={index}>{desc}</ListItem>
         ))}
-      </ul>
+      </ListContainer>
     </div>
-  </div>
+  </Container>
 )
 
 const Resume = () => (
-  <div style={{ paddingBottom: '10px' }}>
-    <h1 style={{ textAlign: 'center' }}>Resume</h1>
+  <Container>
+    <Grid
+      container
+      direction={'row'}
+      alignItems={'center'}
+      justifyContent={'center'}
+    >
+      <HeaderText>Resume</HeaderText>
+    </Grid>
     {items.map((item, index) => (
       <ResumeItem item={item} index={index} />
     ))}
-  </div>
+  </Container>
 )
 
 export default Resume
