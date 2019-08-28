@@ -2,12 +2,23 @@ import React from 'react'
 import './App.css'
 import Particles from 'react-particles-js'
 import Grid from '@material-ui/core/Grid'
+import styled from 'styled-components'
 
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
+const StyledParticles = styled(Particles)`
+        width: 100%;
+        background-color: #161515;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: '50% 50%';
+        z-index: -1;
+`
+
 const Header = () => (
   <div>
-    <Particles
+    <StyledParticles
       params={{
         particles: {
           line_linked: {
@@ -18,15 +29,6 @@ const Header = () => (
             },
           },
         },
-      }}
-      style={{
-        width: '100%',
-        backgroundColor: '#161515',
-        position: 'absolute',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: '50% 50%',
-        zIndex: '-1',
       }}
     />
     <header className="App-header">
