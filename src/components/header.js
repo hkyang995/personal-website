@@ -6,18 +6,50 @@ import styled from 'styled-components'
 
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
-const StyledParticles = styled(Particles)`
-        width: 100%;
-        background-color: #161515;
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: '50% 50%';
-        z-index: -1;
+const Container = styled.div``
+
+const HeaderContainer = styled.header``
+
+const HeaderText = styled.h1`
+  letter-spacing: 4px;
 `
 
+const SubHeaderText = styled.p`
+  letter-spacing: 4px;
+`
+
+const StyledParticles = styled(Particles)`
+  width: 100%;
+  background-color: #161515;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: '50% 50%';
+  z-index: -1;
+`
+
+const ButtonIcon = props => {
+  if (props.text === 'linkedin') {
+    return <FaLinkedinIn />
+  }
+  return <FaGithub />
+}
+
+const StyledBtn = props => (
+  <a id="btn-outline" href={props.href} target="_blank">
+    <svg height="40" width="210">
+      <rect class="shape" height="40" width="210" />
+    </svg>
+    <div class="text">
+      {' '}
+      <ButtonIcon text={props.text} style={{ marginRight: '6px' }} />{' '}
+      {props.text}
+    </div>
+  </a>
+)
+
 const Header = () => (
-  <div>
+  <Container>
     <StyledParticles
       params={{
         particles: {
@@ -31,59 +63,26 @@ const Header = () => (
         },
       }}
     />
-    <header className="App-header">
-      <h1
-        style={{
-          letterSpacing: '4px',
-        }}
-      >
-        Henry Yang
-      </h1>
-      <p
-        style={{
-          letterSpacing: '4px',
-        }}
-      >
-        web developer, artist, dog enthusiast
-      </p>
+    <HeaderContainer className="App-header">
+      <HeaderText>Henry Yang</HeaderText>
+      <SubHeaderText>web developer, artist, dog enthusiast</SubHeaderText>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item>
-          <div id="wrapper">
-            <a
-              id="btn-outline"
-              href="https://www.linkedin.com/in/henry-yang-83286415a/"
-              target="_blank"
-            >
-              <svg height="40" width="210">
-                <rect class="shape" height="40" width="210" />
-              </svg>
-              <div class="text">
-                {' '}
-                <FaLinkedinIn style={{ marginRight: '6px' }} /> linkedin
-              </div>
-            </a>
-          </div>
+          <Container id="wrapper">
+            <StyledBtn
+              href={'https://www.linkedin.com/in/henry-yang-83286415a/'}
+              text={'linkedin'}
+            />
+          </Container>
         </Grid>
         <Grid item>
-          <div id="wrapper">
-            <a
-              id="btn-outline"
-              href="https://github.com/hkyang995"
-              target="_blank"
-            >
-              <svg height="40" width="210" xmlns="http://www.w3.org/2000/svg">
-                <rect class="shape" height="40" width="210" />
-              </svg>
-              <div class="text">
-                <FaGithub style={{ marginRight: '6px' }} />
-                github
-              </div>
-            </a>
-          </div>
+          <Container id="wrapper">
+            <StyledBtn href={'https://github.com/hkyang995'} text={'github'} />
+          </Container>
         </Grid>
       </Grid>
-    </header>
-  </div>
+    </HeaderContainer>
+  </Container>
 )
 
 export default Header
