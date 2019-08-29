@@ -28,6 +28,46 @@ const StyledParticles = styled(Particles)`
   z-index: -1;
 `
 
+const BtnOutline = styled.a`
+  text-decoration: none;
+  margin: 30px auto 0;
+  width: 210px;
+  height: 40px;
+  display: block;
+`
+const BtnShape = styled.rect`
+  stroke-dasharray: 100 310;
+  stroke-dashoffset: -304;
+  stroke-width: 5px;
+  fill: transparent;
+  stroke: #fff;
+  -webkit-transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  -ms-transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+
+  ${BtnOutline}:hover & {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 550;
+  }
+`
+const BtnText = styled.div`
+  top: -34px;
+  position: relative;
+  color: #fff;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  margin-right: -4px;
+`
+const BtnWrapper = styled.div`
+  text-align: center;
+  line-height: 1.5;
+  line-height: 150%;
+  font-size: 62.5%;
+  width: 100%;
+  overflow: hidden;
+`
+
 const ButtonIcon = props => {
   if (props.text === 'linkedin') {
     return <FaLinkedinIn />
@@ -36,16 +76,16 @@ const ButtonIcon = props => {
 }
 
 const StyledBtn = props => (
-  <a id="btn-outline" href={props.href} target="_blank">
+  <BtnOutline href={props.href} target="_blank">
     <svg height="40" width="210">
-      <rect class="shape" height="40" width="210" />
+      <BtnShape height="40" width="210" />
     </svg>
-    <div class="text">
+    <BtnText>
       {' '}
       <ButtonIcon text={props.text} style={{ marginRight: '6px' }} />{' '}
       {props.text}
-    </div>
-  </a>
+    </BtnText>
+  </BtnOutline>
 )
 
 const Header = () => (
@@ -68,17 +108,17 @@ const Header = () => (
       <SubHeaderText>web developer, artist, dog enthusiast</SubHeaderText>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item>
-          <Container id="wrapper">
+          <BtnWrapper>
             <StyledBtn
               href={'https://www.linkedin.com/in/henry-yang-83286415a/'}
               text={'linkedin'}
             />
-          </Container>
+          </BtnWrapper>
         </Grid>
         <Grid item>
-          <Container id="wrapper">
+          <BtnWrapper>
             <StyledBtn href={'https://github.com/hkyang995'} text={'github'} />
-          </Container>
+          </BtnWrapper>
         </Grid>
       </Grid>
     </HeaderContainer>

@@ -57,20 +57,22 @@ let items = [
     subheader: (
       <Grid
         container
-        direction="row"
-        justify="space-between"
-        alignItems="center"
+        direction={'row'}
+        justify={'space-between'}
+        alignItems={'center'}
       >
-        <Grid item>Software Development Intern, Novvum</Grid>{' '}
-        <Grid item>June 2018-Present</Grid>
+        <Grid item>Junior Software Developer</Grid>
+        <Grid item>Novvum</Grid>
+        <Grid item>JUN 2018 - AUG 2019</Grid>
       </Grid>
     ),
     description: [
-      'Assists with troubleshooting and deployment of software projects',
-      'Works with engineering team to design and implement features and capabilities on web applications using ReactJS and Apollo GraphQL ',
-      'Applies agile methodologies to implement features',
-      'Refactored code base to improve efficiency and speed for a company with over 100,000 users',
-      'Created new features to improve user experience for a company with over 5,000 users',
+      'Assisted with troubleshooting and deployment of software projects',
+      'Worked with engineering team to design and implement features and capabilities on web applications using ReactJS and Apollo GraphQL',
+      'Applied Agile methodologies to implement features',
+      'Refactored code base to improve efficiency and speed for Hyrecar, a company with over 100,000 users',
+      'Created new features to improve user experience for Raizzz, a company with over 5,000 users',
+      'Implemented and strategized tracking in Android using Segment to collect user data for Raftr, a company with over 5,000 users',
     ],
   },
 ]
