@@ -3,7 +3,12 @@ import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 import { FaPencilAlt, FaRocket, FaCode } from 'react-icons/fa'
 
-const Container = styled.div``
+const Container = styled.div`
+  width: 100%;
+  background-color: #161515;
+  color: #ffffff;
+  font-weight: 100;
+`
 const HeaderText = styled.h1``
 const SubHeaderText = styled.h3``
 const Divider = styled.hr``
@@ -78,7 +83,7 @@ let items = [
 ]
 
 const ResumeItem = props => (
-  <Container>
+  <div>
     <SubHeaderText>
       <Grid
         container
@@ -99,7 +104,7 @@ const ResumeItem = props => (
         ))}
       </ListContainer>
     </div>
-  </Container>
+  </div>
 )
 
 const Resume = () => (
