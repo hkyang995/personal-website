@@ -8,6 +8,7 @@ const Container = styled.div`
   background-color: #161515;
   color: #ffffff;
   font-weight: 100;
+  padding: 35vh;
 `
 const HeaderText = styled.h1``
 const SubHeaderText = styled.h3``
@@ -36,13 +37,13 @@ let items = [
       </Grid>
     ),
     description: [
-      <Container>Member of the Association for Computing Machinery</Container>,
-      <Container>
+      <div>Member of the Association for Computing Machinery</div>,
+      <div>
         <BoldText>Dean's list:</BoldText> Fall 2017 - Present
-      </Container>,
-      <Container>
+      </div>,
+      <div>
         <BoldText>GPA:</BoldText> 3.5
-      </Container>,
+      </div>,
     ],
   },
   {
