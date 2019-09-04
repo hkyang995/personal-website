@@ -12,99 +12,85 @@ const Container = styled.div`
 `
 const HeaderText = styled.h1``
 const SubHeaderText = styled.h3``
-const Divider = styled.hr``
-const BodyText = styled.h4``
-const ListContainer = styled.ul``
-const ListItem = styled.li``
-const BoldText = styled.b``
+const BodyText = styled.div`
+  font-weight: 100;
+`
+const BoldText = styled.div`
+  font-weight: 500;
+`
 
-let items = [
-  {
-    header: 'Education',
-    icon: <FaPencilAlt />,
-    subheader: (
-      <Grid
-        container
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-      >
-        <Grid item>
-          California State University, Fullerton - Bachelor of Science in
-          Computer Science
-        </Grid>
-        <Grid item>Expected Winter 2019</Grid>
-      </Grid>
-    ),
-    description: [
-      <div>Member of the Association for Computing Machinery</div>,
-      <div>
-        <BoldText>Dean's list:</BoldText> Fall 2017 - Present
-      </div>,
-      <div>
-        <BoldText>GPA:</BoldText> 3.5
-      </div>,
-    ],
-  },
-  {
-    header: 'Skills',
-    icon: <FaRocket />,
-    subheader: '',
-    description: [
-      'Languages: Javascript, ReactJS, GraphQL, HTML/CSS, C/C++, Java',
-      'Concepts: Object Oriented Programming, Data Structures, Algorithm Engineering',
-      'Operating Systems: Windows, Linux, Mac',
-      'Tools: Git, Eclipse, Visual Studio, Qt, MS SQL Server',
-    ],
-  },
-  {
-    header: 'Experience',
-    icon: <FaCode />,
-    subheader: (
-      <Grid
-        container
-        direction={'row'}
-        justify={'space-between'}
-        alignItems={'center'}
-      >
-        <Grid item>Junior Software Developer</Grid>
-        <Grid item>Novvum</Grid>
-        <Grid item>JUN 2018 - AUG 2019</Grid>
-      </Grid>
-    ),
-    description: [
-      'Assisted with troubleshooting and deployment of software projects',
-      'Worked with engineering team to design and implement features and capabilities on web applications using ReactJS and Apollo GraphQL',
-      'Applied Agile methodologies to implement features',
-      'Refactored code base to improve efficiency and speed for Hyrecar, a company with over 100,000 users',
-      'Created new features to improve user experience for Raizzz, a company with over 5,000 users',
-      'Implemented and strategized tracking in Android using Segment to collect user data for Raftr, a company with over 5,000 users',
-    ],
-  },
-]
-
-const ResumeItem = props => (
+const SkillsBody = () => (
   <div>
-    <SubHeaderText>
-      <Grid
-        container
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-      >
-        <Grid item>{props.item.header}</Grid>
-        <Grid item>{props.item.icon}</Grid>
-      </Grid>
-    </SubHeaderText>
-    <Divider />
-    <div>
-      <BodyText>{props.item.subheader}</BodyText>
-      <ListContainer>
-        {props.item.description.map((desc, index) => (
-          <ListItem index={index}>{desc}</ListItem>
-        ))}
-      </ListContainer>
-    </div>
+    <BoldText>Languages:</BoldText>
+    <BodyText>
+      Javascript, ReactJS, GraphQL, GatsbyJS, HTML/CSS, C/C++, Java, Python
+    </BodyText>
+    <BoldText>Concepts:</BoldText>
+    <BodyText>Object-Oriented Programming, Data Structures Operating</BodyText>
+    <BoldText>Systems:</BoldText>
+    <BodyText>
+      Windows, Linux, Mac Tools: Git, Eclipse, Visual Studio, Android Studio, Qt
+    </BodyText>
+  </div>
+)
+
+const ExperienceBody = () => (
+  <div>
+    <BoldText>SOFTWARE DEVELOPER NOVVUM | JUN 2018 - AUG 2019</BoldText>
+    <BodyText>
+      <ul>
+        <li>
+          Assisted with troubleshooting and deployment of software projects
+        </li>
+        <li>
+          Designed and implemented features and capabilities on web applications
+          using ReactJS and Apollo GraphQL
+        </li>
+        <li>
+          Applied Agile methodologies to implement features Refactored code base
+          to improve efficiency and speed for Hyrecar, a company with over
+          100,000 users
+        </li>
+        <li>
+          Created new features to improve user experience for Raizzz, a company
+          with over 5,000 users
+        </li>
+        <li>
+          Implemented and strategized tracking in Android using Segment to
+          collect user data for Raftr, a company with over 5,000 users
+        </li>
+      </ul>
+    </BodyText>
+  </div>
+)
+
+const EducationBody = () => (
+  <div>
+    <BoldText>BACHELOR OF SCIENCE IN COMPUTER SCIENCE</BoldText>
+    <BodyText>CALIFORNIA STATE UNIVERSITY, FULLERTON</BodyText>
+    <BodyText>EXPECTED: JANUARY 2019</BodyText>
+    <BodyText>GPA: 3.6</BodyText>
+    <BodyText>DEAN'S LIST: FALL 2017-PRESENT</BodyText>
+  </div>
+)
+
+const ProjectsBody = () => (
+  <div>
+    <BoldText>SECURE CHAT</BoldText>
+    <BodyText>MAY 2019</BodyText>
+    <BodyText>github.com/hkyang995/Secure-Chat</BodyText>
+    <BodyText>
+      Real time secure chat application using AES and RSA Developed with GraphQL
+      Nexus and ReactJS
+    </BodyText>
+    <BoldText>WATCHTOWER</BoldText>
+    <BodyText>JAN 2019 - JUL 2019</BodyText>
+    <BodyText>yourwatchtower.com</BodyText>
+    <BodyText>
+      Collects and stores data in real time from lifeguards and beaches using
+      AWS Lambda Collaborated in a team of 5 using Node.js, Webhooks, Jotform
+      and Airtable
+    </BodyText>
   </div>
 )
 
@@ -118,9 +104,31 @@ const Resume = () => (
     >
       <HeaderText>Resume</HeaderText>
     </Grid>
-    {items.map((item, index) => (
-      <ResumeItem item={item} index={index} />
-    ))}
+    <Grid
+      container
+      direction={'row'}
+      alignItems={'center'}
+      justifyContent={'center'}
+    >
+      <Grid item style={{ width: '40%', minWidth: '300px' }}>
+        <SubHeaderText>Contact</SubHeaderText>
+        <BodyText>HKYANG@CSU.FULLERTON.EDU </BodyText>
+        <BodyText>GITHUB.COM/HKYANG995</BodyText>
+        <SubHeaderText>Skills</SubHeaderText>
+        <SkillsBody />
+      </Grid>
+      <Grid item style={{ maxWidth: '60%', minWidth: '300px' }}>
+        <SubHeaderText>Experience</SubHeaderText>
+        <FaRocket />
+        <ExperienceBody />
+        <SubHeaderText>Education</SubHeaderText>
+        <FaPencilAlt />
+        <EducationBody />
+        <SubHeaderText>Projects</SubHeaderText>
+        <FaCode />
+        <ProjectsBody />
+      </Grid>
+    </Grid>
   </Container>
 )
 
