@@ -11,8 +11,16 @@ const Container = styled.div`
   font-weight: 100;
   padding: 35vh;
 `
-const HeaderText = styled.h1``
-const SubHeaderText = styled.h3``
+const HeaderText = styled.h1`
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 150;
+`
+const SubHeaderText = styled.div`
+  font-size: 1.6em;
+  font-weight: 350;
+  letter-spacing: 2px;
+`
 const SubBodyText = styled.div`
   font-style: italic;
   font-size: 1.1em;
@@ -22,18 +30,24 @@ const BodyText = styled.div`
   font-size: 0.9em;
 `
 const ProjectImg = styled.img`
-  width: 600px;
+  min-width: 250px;
+`
+const Space = styled.div`
+  min-height: 100px;
 `
 
 const SingleProject = props => (
   <Grid
     container
+    spacing={5}
     direction={props.direction}
+    justify={'space-between'}
     alignItems={'center'}
-    justifyContent={'center'}
   >
-    <ProjectImg src={props.img} />
-    <Grid>
+    <Grid item xs={12} md={6}>
+      <ProjectImg src={props.img} />
+    </Grid>
+    <Grid item xs={12} md={6} style={{ maxWidth: '350px' }}>
       <SubHeaderText>{props.name}</SubHeaderText>
       <SubBodyText>{props.subheader}</SubBodyText>
       <BodyText>{props.body}</BodyText>
@@ -43,14 +57,11 @@ const SingleProject = props => (
 
 const Resume = () => (
   <Container>
-    <Grid
-      container
-      direction={'row'}
-      alignItems={'center'}
-      justifyContent={'center'}
-    >
+    <Grid container direction={'row'} alignItems={'center'} justify={'center'}>
       <HeaderText>Projects</HeaderText>
     </Grid>
+    <Space />
+    <Space />
     <SingleProject
       name={'Secure Chat'}
       subheader={'Real time secure chat'}
@@ -60,6 +71,7 @@ const Resume = () => (
       direction={'row'}
       img={securechatimg}
     />
+    <Space />
     <SingleProject
       name={'Watchtower'}
       subheader={'Custom data gathering for lifeguard agencies'}
