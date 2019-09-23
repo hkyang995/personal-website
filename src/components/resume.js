@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 import watchtowerimg from '../images/watchtower_case.png'
 import securechatimg from '../images/securechat_case.png'
+import nvimg from '../images/nv_case.png'
 
 const Container = styled.div`
   width: 100%;
@@ -63,13 +64,13 @@ const Resume = () => (
     <Space />
     <Space />
     <SingleProject
-      name={'Secure Chat'}
-      subheader={'Real time secure chat'}
+      name={'Novvum Website'}
+      subheader={'Website for showcasing software agency Novvum'}
       body={
-        'Secure chatroom application using AES and RSA, made with GraphQL Nexus and ReactJS.'
+        'Company website and blog made with GatsbyJS and ReactJS to display Novvum projects and experience.'
       }
       direction={'row'}
-      img={securechatimg}
+      img={nvimg}
     />
     <Space />
     <SingleProject
@@ -80,6 +81,16 @@ const Resume = () => (
       }
       direction={'row-reverse'}
       img={watchtowerimg}
+    />
+    <Space />
+    <SingleProject
+      name={'Secure Chat'}
+      subheader={'Real time secure chat'}
+      body={
+        'Secure chatroom application using AES and RSA, made with GraphQL Nexus and ReactJS.'
+      }
+      direction={'row'}
+      img={securechatimg}
     />
   </Container>
 )
