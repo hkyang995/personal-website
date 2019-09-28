@@ -16,7 +16,7 @@ const Container = styled.div`
 `
 const SubContainer = styled.div`
   width: 100%;
-  background-color: #232121;
+  background-color: #383737;
   opacity: 0.7
   color: #ffffff;
   font-weight: 100;
