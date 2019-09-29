@@ -19,6 +19,7 @@ const SubHeaderText = styled.p`
 
 const StyledParticles = styled(Particles)`
   width: 100%;
+  height: 100%;
   background-color: #161515;
   position: absolute;
   background-repeat: no-repeat;
