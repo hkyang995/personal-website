@@ -54,7 +54,10 @@ const Header = () => (
     />
     <HeaderContainer className="App-header">
       <HeaderText>Henry Yang</HeaderText>
-      <SubHeaderText>web developer, artist, dog enthusiast</SubHeaderText>
+      <SubHeaderText>web developer, boulderer, dog enthusiast</SubHeaderText>
+      <SubHeaderText>
+        Irvine based ReactJS developer and CSUF student graduating December 2019
+      </SubHeaderText>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item>
           <BtnWrapper>

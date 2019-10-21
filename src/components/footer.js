@@ -21,26 +21,31 @@ const Space = styled.div`
   min-height: 25px;
 `
 
+const SmallFont = styled.div`
+  font-size: 12px;
+  padding-bottom: 0px;
+`
+
 const Footer = () => (
   <Container>
     <SubContainer>
+      <Space />
       <Space />
       <Grid
         container
         direction={'row'}
         alignItems={'center'}
-        justify={'space-between'}
+        justify={'center'}
         style={{ width: '100%' }}
       >
-        <div>
+        <SmallFont>
           Copyright © 2019. All rights reserved. Made with{' '}
           <a href="https://www.gatsbyjs.org/" style={{ color: 'white' }}>
             Gatsby
           </a>
           .
-        </div>
+        </SmallFont>
       </Grid>
-      <Space />
     </SubContainer>
   </Container>
 )
