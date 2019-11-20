@@ -29,16 +29,16 @@ const HeaderText = styled.div`
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 150;
+  text-align: center;
 `
 
 const LogoImg = styled.img`
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-
   max-width: 200px;
   max-height: 100px;
   width: auto;
-  margin: 20px;
+  margin: 55px;
 
   transition: transform 1000ms;
   &:hover {
@@ -73,7 +73,7 @@ const Clients = () => (
         container
         direction={'row'}
         alignItems={'center'}
-        justify={'space-between'}
+        justify={'center'}
         style={{ width: '100%' }}
       >
         <ImgLink img={hyrecarlogo} link={'https://hyrecar.com'} />
