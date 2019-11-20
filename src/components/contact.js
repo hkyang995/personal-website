@@ -72,13 +72,13 @@ const Contact = () => (
               Henry Yang
             </BodyText>
           </Grid>
+          <Space height="20px" />
+          <div>
+            <BodyText href="mailto:hkyang@csu.fullerton.edu">
+              hkyang@csu.fullerton.edu
+            </BodyText>
+          </div>
         </Grid>
-        <Space width="200px" />
-        <div>
-          <BodyText href="mailto:hkyang@csu.fullerton.edu">
-            hkyang@csu.fullerton.edu
-          </BodyText>
-        </div>
       </Grid>
       <Space />
     </Grid>
