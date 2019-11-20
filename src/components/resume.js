@@ -10,7 +10,7 @@ const Container = styled.div`
   background-color: #161515;
   color: #ffffff;
   font-weight: 100;
-  padding: 35vh;
+  padding: 10vh;
 `
 const HeaderText = styled.h1`
   text-transform: uppercase;
@@ -29,9 +29,10 @@ const SubBodyText = styled.div`
 const BodyText = styled.div`
   font-weight: 100;
   font-size: 0.9em;
+  min-width: 300px;
 `
 const ProjectImg = styled.img`
-  min-width: 250px;
+  min-width: 300px;
 `
 const Space = styled.div`
   min-height: 100px;
@@ -41,9 +42,9 @@ const SingleProject = props => (
   <Grid
     container
     spacing={5}
-    direction={props.direction}
-    justify={'space-between'}
-    alignItems={'center'}
+    direction={('row', props.direction, props.direction)}
+    justify={('center', 'center', 'space-between')}
+    alignItems={('center', 'center', 'center')}
   >
     <Grid item xs={12} md={6}>
       <ProjectImg src={props.img} />
