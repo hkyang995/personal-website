@@ -5,13 +5,10 @@ import styled from 'styled-components'
 const Container = styled.div`
   width: 100%;
   background-color: #161515;
-  color: #ffffff;
-  font-weight: 100;
 `
 const SubContainer = styled.div`
   width: 100%;
-  background-image: linear-gradient(#161515, #383737);
-  opacity: 0.7
+  opacity: 0.3
   color: #ffffff;
   font-weight: 100;
   padding: 5vh;
@@ -29,8 +26,6 @@ const SmallFont = styled.div`
 const Footer = () => (
   <Container>
     <SubContainer>
-      <Space />
-      <Space />
       <Grid
         container
         direction={'row'}
