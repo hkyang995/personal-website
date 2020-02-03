@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const BtnWrapper = styled.div`
   text-align: center;
-  line-height: 1.5;
   line-height: 150%;
   font-size: 62.5%;
   width: 100%;
@@ -37,8 +36,8 @@ const BtnText = styled.div`
   position: relative;
   color: #fff;
   font-size: 1.5em;
-  letter-spacing: 4px;
-  margin-right: -4px;
+  letter-spacing: ${props => (props.wide ? '1px' : '4px')};
+  margin-right: ${props => (props.wide ? '1px' : '-4px')};
 `
 
 const ButtonIcon = styled.b`
@@ -51,7 +50,7 @@ export const StyledBtn = props => (
       <svg height="40" width="210">
         <BtnShape height="40" width="210" />
       </svg>
-      <BtnText>
+      <BtnText wide={props.wide}>
         <ButtonIcon>{props.icon}</ButtonIcon> {props.text}
       </BtnText>
     </BtnOutline>

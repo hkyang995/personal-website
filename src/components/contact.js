@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { StyledBtn } from '../components/header/index'
 
 const Container = styled.div`
   width: 100%;
@@ -51,33 +52,23 @@ const Contact = () => (
         justify={'center'}
       >
         <Grid direction={'column'} alignItems={'center'} justify={'center'}>
-          <Grid
-            container
-            direction={'row'}
-            alignItems={'center'}
-            justify={'center'}
-          >
-            <FaGithub /> <Space width="10px" height="0px" />
-            <BodyText href="https://github.com/hkyang995">hkyang995</BodyText>
-          </Grid>
+          <StyledBtn
+            href={'https://github.com/hkyang995'}
+            icon={<FaGithub />}
+            text={'hkyang995'}
+          />
           <Space height="20px" />
-          <Grid
-            container
-            direction={'row'}
-            alignItems={'center'}
-            justify={'center'}
-          >
-            <FaLinkedinIn /> <Space width="10px" height="0px" />
-            <BodyText href="https://www.linkedin.com/in/henry-yang-83286415a/">
-              Henry Yang
-            </BodyText>
-          </Grid>
+          <StyledBtn
+            href={'https://www.linkedin.com/in/henry-yang-83286415a/'}
+            icon={<FaLinkedinIn />}
+            text={'Henry Yang'}
+          />
           <Space height="20px" />
-          <div>
-            <BodyText href="mailto:hkyang@csu.fullerton.edu">
-              hkyang@csu.fullerton.edu
-            </BodyText>
-          </div>
+          <StyledBtn
+            wide
+            href={'mailto:hkyang@csu.fullerton.edu'}
+            text={'hkyang@csu.fullerton.edu'}
+          />
         </Grid>
       </Grid>
       <Space />
