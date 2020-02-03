@@ -1,8 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-
+const BtnWrapper = styled.div`
+  text-align: center;
+  line-height: 1.5;
+  line-height: 150%;
+  font-size: 62.5%;
+  width: 100%;
+  overflow: hidden;
+`
 const BtnOutline = styled.a`
   text-decoration: none;
   margin: 30px auto 0;
@@ -35,22 +41,19 @@ const BtnText = styled.div`
   margin-right: -4px;
 `
 
-const ButtonIcon = props => {
-  if (props.text === 'linkedin') {
-    return <FaLinkedinIn />
-  }
-  return <FaGithub />
-}
+const ButtonIcon = styled.b`
+  margin-right: 6px;
+`
 
 export const StyledBtn = props => (
-  <BtnOutline href={props.href} target="_blank">
-    <svg height="40" width="210">
-      <BtnShape height="40" width="210" />
-    </svg>
-    <BtnText>
-      {' '}
-      <ButtonIcon text={props.text} style={{ marginRight: '6px' }} />{' '}
-      {props.text}
-    </BtnText>
-  </BtnOutline>
+  <BtnWrapper>
+    <BtnOutline href={props.href} target="_blank">
+      <svg height="40" width="210">
+        <BtnShape height="40" width="210" />
+      </svg>
+      <BtnText>
+        <ButtonIcon>{props.icon}</ButtonIcon> {props.text}
+      </BtnText>
+    </BtnOutline>
+  </BtnWrapper>
 )

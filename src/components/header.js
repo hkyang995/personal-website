@@ -4,6 +4,7 @@ import Particles from 'react-particles-js'
 import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 import { StyledBtn } from '../components/header/index'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 const Container = styled.div``
 
@@ -26,15 +27,6 @@ const StyledParticles = styled(Particles)`
   background-size: cover;
   background-position: '50% 50%';
   z-index: -1;
-`
-
-const BtnWrapper = styled.div`
-  text-align: center;
-  line-height: 1.5;
-  line-height: 150%;
-  font-size: 62.5%;
-  width: 100%;
-  overflow: hidden;
 `
 
 const Header = () => (
@@ -69,17 +61,18 @@ const Header = () => (
       </Grid>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item>
-          <BtnWrapper>
-            <StyledBtn
-              href={'https://www.linkedin.com/in/henry-yang-83286415a/'}
-              text={'linkedin'}
-            />
-          </BtnWrapper>
+          <StyledBtn
+            href={'https://www.linkedin.com/in/henry-yang-83286415a/'}
+            icon={<FaLinkedinIn />}
+            text={'linkedin'}
+          />
         </Grid>
         <Grid item>
-          <BtnWrapper>
-            <StyledBtn href={'https://github.com/hkyang995'} text={'github'} />
-          </BtnWrapper>
+          <StyledBtn
+            href={'https://github.com/hkyang995'}
+            text={'github'}
+            icon={<FaGithub />}
+          />
         </Grid>
       </Grid>
     </HeaderContainer>
