@@ -2,10 +2,11 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { StyledBtn } from '../components/header/index'
 
 const Container = styled.div`
   width: 100%;
-  background-color: #161515;
+  background-color: #292929;
   color: #ffffff;
   font-weight: 100;
   padding: 5vh;
@@ -21,16 +22,6 @@ const Space = styled.div`
   min-height: ${props => (props.height ? props.height : '75px')};
   min-width: ${props => (props.width ? props.width : '75px')};
 `
-const BodyText = styled.a`
-  font-weight: 100;
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`
 
 const Contact = () => (
   <Container>
@@ -42,7 +33,7 @@ const Contact = () => (
     >
       <Space />
       <Space />
-      <HeaderText>Get in touch</HeaderText>
+      <HeaderText>Contact</HeaderText>
       <Space />
       <Grid
         container
@@ -51,33 +42,24 @@ const Contact = () => (
         justify={'center'}
       >
         <Grid direction={'column'} alignItems={'center'} justify={'center'}>
-          <Grid
-            container
-            direction={'row'}
-            alignItems={'center'}
-            justify={'center'}
-          >
-            <FaGithub /> <Space width="10px" height="0px" />
-            <BodyText href="https://github.com/hkyang995">hkyang995</BodyText>
-          </Grid>
-          <Space height="20px" />
-          <Grid
-            container
-            direction={'row'}
-            alignItems={'center'}
-            justify={'center'}
-          >
-            <FaLinkedinIn /> <Space width="10px" height="0px" />
-            <BodyText href="https://www.linkedin.com/in/henry-yang-83286415a/">
-              Henry Yang
-            </BodyText>
-          </Grid>
-          <Space height="20px" />
-          <div>
-            <BodyText href="mailto:hkyang@csu.fullerton.edu">
-              hkyang@csu.fullerton.edu
-            </BodyText>
-          </div>
+          <StyledBtn
+            href={'https://github.com/hkyang995'}
+            icon={<FaGithub />}
+            text={'hkyang995'}
+          />
+          <Space height="40px" />
+          <StyledBtn
+            href={'https://www.linkedin.com/in/henry-yang-83286415a/'}
+            icon={<FaLinkedinIn />}
+            text={'Henry Yang'}
+          />
+          <Space height="40px" />
+          <StyledBtn
+            wide
+            href={'mailto:hkyang@csu.fullerton.edu'}
+            text={'hkyang@csu.fullerton.edu'}
+          />
+          <Space height="100px" />
         </Grid>
       </Grid>
       <Space />
