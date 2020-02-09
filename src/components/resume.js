@@ -18,6 +18,7 @@ const HeaderText = styled.h1`
   font-weight: 150;
 `
 const SubHeaderText = styled.div`
+  text-align: center;
   font-size: 1.8em;
   letter-spacing: 5px;
 `
@@ -29,7 +30,7 @@ const SubBodyText = styled.div`
 const BodyText = styled.div`
   font-weight: 100;
   font-size: 0.9em;
-  min-width: 300px;
+  max-width: 300px;
   text-align: center;
 `
 const ProjectImg = styled.img`
@@ -48,7 +49,6 @@ const SingleProject = props => (
     alignItems={'center'}
   >
     <SubHeaderText>{props.name}</SubHeaderText>
-    <Space />
     <ProjectImg src={props.img} />
     <SubBodyText>{props.subheader}</SubBodyText>
     <Grid item style={{ maxWidth: '350px' }}>
@@ -74,6 +74,7 @@ const Resume = () => (
       img={nvimg}
     />
     <Space />
+    <Space />
     <SingleProject
       name={'Watchtower'}
       subheader={'Custom data for lifeguards'}
@@ -83,6 +84,7 @@ const Resume = () => (
       direction={'row-reverse'}
       img={watchtowerimg}
     />
+    <Space />
     <Space />
     <SingleProject
       name={'Secure Chat'}
