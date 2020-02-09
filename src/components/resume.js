@@ -18,40 +18,40 @@ const HeaderText = styled.h1`
   font-weight: 150;
 `
 const SubHeaderText = styled.div`
-  font-size: 1.6em;
-  font-weight: 350;
-  letter-spacing: 2px;
+  text-align: center;
+  font-size: 1.8em;
+  letter-spacing: 5px;
 `
 const SubBodyText = styled.div`
-  font-style: italic;
-  font-size: 1.1em;
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 5px;
 `
 const BodyText = styled.div`
   font-weight: 100;
   font-size: 0.9em;
-  min-width: 300px;
+  max-width: 300px;
+  text-align: center;
 `
 const ProjectImg = styled.img`
-  min-width: 300px;
+  max-width: 60%;
 `
 const Space = styled.div`
-  min-height: 100px;
+  min-height: 75px;
 `
 
 const SingleProject = props => (
   <Grid
     container
     spacing={5}
-    direction={('row', props.direction, props.direction)}
-    justify={('center', 'center', 'space-between')}
-    alignItems={('center', 'center', 'center')}
+    direction={'column'}
+    justify={'center'}
+    alignItems={'center'}
   >
-    <Grid item xs={12} md={6}>
-      <ProjectImg src={props.img} />
-    </Grid>
-    <Grid item xs={12} md={6} style={{ maxWidth: '350px' }}>
-      <SubHeaderText>{props.name}</SubHeaderText>
-      <SubBodyText>{props.subheader}</SubBodyText>
+    <SubHeaderText>{props.name}</SubHeaderText>
+    <ProjectImg src={props.img} />
+    <SubBodyText>{props.subheader}</SubBodyText>
+    <Grid item style={{ maxWidth: '350px' }}>
       <BodyText>{props.body}</BodyText>
     </Grid>
   </Grid>
@@ -66,7 +66,7 @@ const Resume = () => (
     <Space />
     <SingleProject
       name={'Novvum Website'}
-      subheader={'Website for showcasing software agency Novvum'}
+      subheader={'Showcases software agency Novvum'}
       body={
         'Company website and blog made with GatsbyJS and ReactJS to display Novvum projects and experience.'
       }
@@ -74,15 +74,17 @@ const Resume = () => (
       img={nvimg}
     />
     <Space />
+    <Space />
     <SingleProject
       name={'Watchtower'}
-      subheader={'Custom data gathering for lifeguard agencies'}
+      subheader={'Custom data for lifeguards'}
       body={
         'Mobile data collection application using Serverless and Node.js to instantly collect and visualize survey data from lifeguards out in the field.'
       }
       direction={'row-reverse'}
       img={watchtowerimg}
     />
+    <Space />
     <Space />
     <SingleProject
       name={'Secure Chat'}
