@@ -18,13 +18,12 @@ const HeaderText = styled.h1`
   font-weight: 150;
 `
 const SubHeaderText = styled.div`
-  font-size: 1.6em;
-  font-weight: 350;
-  letter-spacing: 2px;
+  font-size: 1.8em;
+  letter-spacing: 5px;
 `
 const SubBodyText = styled.div`
-  font-style: italic;
-  font-size: 1.1em;
+  font-size: 1.5em;
+  letter-spacing: 5px;
 `
 const BodyText = styled.div`
   font-weight: 100;
@@ -32,25 +31,28 @@ const BodyText = styled.div`
   min-width: 300px;
 `
 const ProjectImg = styled.img`
-  min-width: 300px;
+  max-width: 70%;
 `
 const Space = styled.div`
-  min-height: 100px;
+  min-height: 75px;
 `
 
 const SingleProject = props => (
   <Grid
     container
     spacing={5}
-    direction={('row', props.direction, props.direction)}
-    justify={('center', 'center', 'space-between')}
-    alignItems={('center', 'center', 'center')}
+    direction={'column'}
+    justify={'center'}
+    alignItems={'center'}
   >
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12}>
+      <SubHeaderText>{props.name}</SubHeaderText>
+    </Grid>
+    <Space />
+    <Grid item xs={12}>
       <ProjectImg src={props.img} />
     </Grid>
-    <Grid item xs={12} md={6} style={{ maxWidth: '350px' }}>
-      <SubHeaderText>{props.name}</SubHeaderText>
+    <Grid item xs={12} md={6} style={{ maxWidth: '550px' }}>
       <SubBodyText>{props.subheader}</SubBodyText>
       <BodyText>{props.body}</BodyText>
     </Grid>
@@ -66,7 +68,7 @@ const Resume = () => (
     <Space />
     <SingleProject
       name={'Novvum Website'}
-      subheader={'Website for showcasing software agency Novvum'}
+      subheader={'Showcases software agency Novvum'}
       body={
         'Company website and blog made with GatsbyJS and ReactJS to display Novvum projects and experience.'
       }
@@ -76,7 +78,7 @@ const Resume = () => (
     <Space />
     <SingleProject
       name={'Watchtower'}
-      subheader={'Custom data gathering for lifeguard agencies'}
+      subheader={'Custom data for lifeguards'}
       body={
         'Mobile data collection application using Serverless and Node.js to instantly collect and visualize survey data from lifeguards out in the field.'
       }
