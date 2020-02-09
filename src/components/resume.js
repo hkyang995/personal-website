@@ -22,6 +22,7 @@ const SubHeaderText = styled.div`
   letter-spacing: 5px;
 `
 const SubBodyText = styled.div`
+  text-align: center;
   font-size: 1.5em;
   letter-spacing: 5px;
 `
@@ -29,9 +30,10 @@ const BodyText = styled.div`
   font-weight: 100;
   font-size: 0.9em;
   min-width: 300px;
+  text-align: center;
 `
 const ProjectImg = styled.img`
-  max-width: 70%;
+  max-width: 60%;
 `
 const Space = styled.div`
   min-height: 75px;
@@ -45,15 +47,11 @@ const SingleProject = props => (
     justify={'center'}
     alignItems={'center'}
   >
-    <Grid item xs={12}>
-      <SubHeaderText>{props.name}</SubHeaderText>
-    </Grid>
+    <SubHeaderText>{props.name}</SubHeaderText>
     <Space />
-    <Grid item xs={12}>
-      <ProjectImg src={props.img} />
-    </Grid>
-    <Grid item xs={12} md={6} style={{ maxWidth: '550px' }}>
-      <SubBodyText>{props.subheader}</SubBodyText>
+    <ProjectImg src={props.img} />
+    <SubBodyText>{props.subheader}</SubBodyText>
+    <Grid item style={{ maxWidth: '350px' }}>
       <BodyText>{props.body}</BodyText>
     </Grid>
   </Grid>
