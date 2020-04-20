@@ -55,8 +55,8 @@ const Header = () => (
         <HeaderText>Henry Yang</HeaderText>
         <SubHeaderText>web developer, boulderer, dog enthusiast</SubHeaderText>
         <SubHeaderText>
-          Irvine based ReactJS developer and CSUF student graduating December
-          2019
+          Orange County based ReactJS developer, BS in Computer Science from CSU
+          Fullerton, December 2019
         </SubHeaderText>
       </Grid>
       <Grid container direction="row" justify="center" alignItems="center">
