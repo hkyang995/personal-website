@@ -66,9 +66,9 @@ const Resume = () => (
     <Space />
     <SingleProject
       name={'Novvum Website'}
-      subheader={'Showcases software agency Novvum'}
+      subheader={'Showcasing software agency Novvum'}
       body={
-        'Company website and blog made with GatsbyJS and ReactJS to display Novvum projects and experience.'
+        'Company website and blog made with GatsbyJS and ReactJS. Responsive and built with mobile first design, working closely with designers by utilizing Figma. Responsible for configuration, setting up wireframes, and responsive design.'
       }
       direction={'row'}
       img={nvimg}
@@ -79,21 +79,10 @@ const Resume = () => (
       name={'Watchtower'}
       subheader={'Custom data for lifeguards'}
       body={
-        'Mobile data collection application using Serverless and Node.js to instantly collect and visualize survey data from lifeguards out in the field.'
+        'Mobile data collection application using Serverless, AWS Lambda and Node.js to instantly collect and visualize survey data from lifeguards out in the field. Responsible for configuration, configuring serverless functionality, configuring and implimenting AWS functionality, and integrating Airtable API into the application.'
       }
       direction={'row-reverse'}
       img={watchtowerimg}
-    />
-    <Space />
-    <Space />
-    <SingleProject
-      name={'Secure Chat'}
-      subheader={'Real time secure chat'}
-      body={
-        'Secure chatroom application using AES and RSA, made with GraphQL Nexus and ReactJS.'
-      }
-      direction={'row'}
-      img={securechatimg}
     />
   </Container>
 )
