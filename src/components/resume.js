@@ -2,8 +2,8 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
 import watchtowerimg from '../images/watchtower_case.png'
-import securechatimg from '../images/securechat_case.png'
 import nvimg from '../images/nv_case.png'
+import FadeInSection from '../utils/FadeInComponent'
 
 const Container = styled.div`
   width: 100%;
@@ -64,26 +64,30 @@ const Resume = () => (
     </Grid>
     <Space />
     <Space />
-    <SingleProject
-      name={'Novvum Website'}
-      subheader={'Showcasing software agency Novvum'}
-      body={
-        'Company website and blog made with GatsbyJS and ReactJS. Responsive and built with mobile first design, working closely with designers by utilizing Figma. Responsible for configuration, setting up wireframes, and responsive design.'
-      }
-      direction={'row'}
-      img={nvimg}
-    />
+    <FadeInSection>
+      <SingleProject
+        name={'Novvum Website'}
+        subheader={'Showcasing software agency Novvum'}
+        body={
+          'Company website and blog made with GatsbyJS and ReactJS. Responsive and built with mobile first design, working closely with designers by utilizing Figma. Responsible for configuration, setting up wireframes, and responsive design.'
+        }
+        direction={'row'}
+        img={nvimg}
+      />
+    </FadeInSection>
     <Space />
     <Space />
-    <SingleProject
-      name={'Watchtower'}
-      subheader={'Custom data for lifeguards'}
-      body={
-        'Mobile data collection application using Serverless, AWS Lambda and Node.js to instantly collect and visualize survey data from lifeguards out in the field. Responsible for configuration, configuring serverless functionality, configuring and implimenting AWS functionality, and integrating Airtable API into the application.'
-      }
-      direction={'row-reverse'}
-      img={watchtowerimg}
-    />
+    <FadeInSection>
+      <SingleProject
+        name={'Watchtower'}
+        subheader={'Custom data for lifeguards'}
+        body={
+          'Mobile data collection application using Serverless, AWS Lambda and Node.js to instantly collect and visualize survey data from lifeguards out in the field. Responsible for configuration, configuring serverless functionality, configuring and implimenting AWS functionality, and integrating Airtable API into the application.'
+        }
+        direction={'row-reverse'}
+        img={watchtowerimg}
+      />
+    </FadeInSection>
   </Container>
 )
 
